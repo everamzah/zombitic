@@ -14,6 +14,7 @@ local soundtab = {
 
 
 -- Zombie by BlockMen
+
 mobs:register_mob("zombies:zombie", {
 	type = "monster",
 	passive = false,
@@ -45,11 +46,16 @@ mobs:register_mob("zombies:zombie", {
 	lava_damage = 1,
 	light_damage = 0,
 	animation = {
-		speed_normal = 5,		speed_run = 5,
-		stand_start = 0,		stand_end = 79,
-		walk_start = 168,		walk_end = 188,
-		run_start = 168,		run_end = 188,
-		--punch_start = 168,		punch_end = 188,
+		speed_normal = 5,
+		speed_run = 5,
+		stand_start = 0,
+		stand_end = 79,
+		walk_start = 168,
+		walk_end = 188,
+		run_start = 168,
+		run_end = 188,
+		--punch_start = 168,
+		--punch_end = 188,
 	},
 })
 
