@@ -1,10 +1,16 @@
-local sounds = {random = "eating-brains", attack = "groan"}
-
 minetest.register_craftitem("zombies:rotten_flesh", {
 	description = "Rotten Flesh",
 	inventory_image = "mobs_rotten_flesh.png",
 	on_use = minetest.item_eat(1),
 })
+
+
+local soundtab = {
+	random = "mobs_zombie",
+	damage = "mobs_zombie_hit",
+	attack = "groan",
+	death = "mobs_zombie_death",
+}
 
 
 -- Zombie by BlockMen
@@ -25,12 +31,7 @@ mobs:register_mob("zombies:zombie", {
 		{"mobs_zombie.png"},
 	},
 	makes_footstep_sound = true,
-	sounds = {
-		random = "mobs_zombie.1",
-		damage = "mobs_zombie_hit",
-		attack = "mobs_zombie.3",
-		death = "mobs_zombie_death",
-	},
+	sounds = soundtab,
 	walk_velocity = 0.5,
 	run_velocity = 0.5,
 	jump = true,
@@ -72,12 +73,15 @@ mobs:register_mob('zombies:1arm', {
 		{"mobs_zombie.png"}
 	},
 	makes_footstep_sound = true,
-	sounds = Noise,
+	sounds = soundtab,
 	walk_velocity = 0.5,
 	run_velocity = 0.5,
 	jump = true,
 	view_range = 15,
-	drops = Inventory,
+	drops = {
+		{name = "zombies:rotten_flesh",
+		chance = 2, min = 3, max = 5,},
+	},
 	lava_damage = 5,
 	light_damage = 0,
 	fall_damage = 2,
@@ -114,12 +118,15 @@ mobs:register_mob('zombies:crawler', {
 		{"mobs_zombie.png"}
 	},
 	makes_footstep_sound = true,
-	sounds = Noise,
+	sounds = soundtab,
 	walk_velocity = 0.1,
 	run_velocity = 0.1, 
 	jump = true,
 	view_range = 15,
-	drops = Inventory,
+	drops = {
+		{name = "zombies:rotten_flesh",
+		chance = 2, min = 3, max = 5,},
+	},
 	lava_damage = 5,
 	light_damage = 0,
 	fall_damage = 2,
@@ -156,12 +163,15 @@ mobs:register_mob('zombies:normal', {
 		{"mobs_zombie.png"}
 	},
 	makes_footstep_sound = true,
-	sounds = Noise,
+	sounds = soundtab,
 	walk_velocity = 0.25,
 	run_velocity = 0.25,
 	jump = true,
 	view_range = 15,
-	drops = Inventory,
+	drops = {
+		{name = "zombies:rotten_flesh",
+		chance = 2, min = 3, max = 5,},
+	},
 	lava_damage = 5,
 	light_damage = 0,
 	fall_damage = 2,
