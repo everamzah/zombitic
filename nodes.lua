@@ -1,0 +1,1 @@
+-- Create infected nodes based on nodes in default
